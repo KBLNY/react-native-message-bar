@@ -299,7 +299,7 @@ class MessageBar extends Component {
   /*
   * Set the animation transformation depending on the chosen animationType, or depending on the state's position if animationType is not overridden
   */
-  _apllyAnimationTypeTransformation() {
+  _applyAnimationTypeTransformation() {
     let position = this.state.position;
     let animationType = this.state.animationType;
 
@@ -358,7 +358,7 @@ class MessageBar extends Component {
 
   render() {
     // Set the animation transformation depending on the chosen animationType, or depending on the state's position if animationType is not overridden
-    this._apllyAnimationTypeTransformation();
+    this._applyAnimationTypeTransformation();
 
     return (
       <Animated.View style={{ transform: this.animationTypeTransform, backgroundColor: this.state.backgroundColor, borderColor: this.state.strokeColor, borderBottomWidth: 1, position: 'absolute', top: this.state.viewTopOffset, bottom: this.state.viewBottomOffset, left: this.state.viewLeftOffset, right: this.state.viewRightOffset, paddingTop: this.state.viewTopInset, paddingBottom: this.state.viewBottomInset, paddingLeft: this.state.viewLeftInset, paddingRight: this.state.viewRightInset }}>
