@@ -256,7 +256,7 @@ animationType         | String   | SlideFromTop         | Define the way the ale
 
 ## Apps using this library
 - Your App here...
-
+1. [Next American President (Android App)](https://play.google.com/store/apps/details?id=com.nextamericanpresident)
 
 ---
 
