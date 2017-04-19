@@ -94,6 +94,9 @@ class MessageBar extends Component {
       viewBottomInset: props.viewBottomInset || 0,
       viewLeftInset: props.viewLeftInset || 0,
       viewRightInset: props.viewRightInset || 0,
+      
+      /* Padding around the content, useful if you want a tiny message bar */
+      messageBarPadding: props.messageBarPadding || 10,
 
       /* Number of Lines for Title and Message */
       titleNumberOfLines: (props.titleNumberOfLines == undefined) ? 1 : props.titleNumberOfLines,
@@ -363,7 +366,7 @@ class MessageBar extends Component {
     return (
       <Animated.View style={{ transform: this.animationTypeTransform, backgroundColor: this.state.backgroundColor, borderColor: this.state.strokeColor, borderBottomWidth: 1, position: 'absolute', top: this.state.viewTopOffset, bottom: this.state.viewBottomOffset, left: this.state.viewLeftOffset, right: this.state.viewRightOffset, paddingTop: this.state.viewTopInset, paddingBottom: this.state.viewBottomInset, paddingLeft: this.state.viewLeftInset, paddingRight: this.state.viewRightInset }}>
         <TouchableOpacity onPress={()=>{this._alertTapped()}} style={{ flex: 1 }}>
-          <View style={{ flex: 1, flexDirection: 'row', alignItems: 'flex-end', padding: 10 }} >
+          <View style={{ flex: 1, flexDirection: 'row', alignItems: 'flex-end', padding: this.state.messageBarPadding }} >
             { this.renderImage() }
             <View style={{ flex: 1, flexDirection: 'column', alignSelf: 'stretch', justifyContent: 'center', marginLeft: 10 }} >
               { this.renderTitle() }
