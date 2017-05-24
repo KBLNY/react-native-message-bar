@@ -107,6 +107,9 @@ class MessageBar extends Component {
       /* Position of the alert and Animation Type the alert is shown */
       position: props.position || 'top',
       animationType: props.animationType,
+
+      /* Show the close button */
+      showCloseButton: props.showCloseButton || false,
     };
   }
 
@@ -369,10 +372,20 @@ class MessageBar extends Component {
               { this.renderTitle() }
               { this.renderMessage() }
             </View>
+            { this.state.showCloseButton && this.renderCloseButton() }
           </View>
         </TouchableOpacity>
       </Animated.View>
     );
+  }
+
+  renderCloseButton() {
+    return (
+      <TouchableOpacity onPress={this.state.onHide}>
+        <View style={{position: 'absolute', right: 0, top: 0, width: 50}}>
+          <Image source={{uri: './assets/icons/closeIconWhite.png'}} style={{resizeMode: 'contain', height: 30, width: 30}} />
+        </View>
+      </TouchableOpacity>);
   }
 
   renderImage() {
