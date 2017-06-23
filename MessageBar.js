@@ -20,7 +20,6 @@ import {
 let windowWidth = Dimensions.get('window').width
 let windowHeight = Dimensions.get('window').height
 
-
 class MessageBar extends Component {
 
   constructor(props) {
@@ -110,7 +109,6 @@ class MessageBar extends Component {
     };
   }
 
-
   /*
   * Show the alert
   */
@@ -131,7 +129,6 @@ class MessageBar extends Component {
     }).start(this._showMessageBarAlertComplete());
   }
 
-
   /*
   * Hide the alert after a delay, typically used for auto-hidding
   */
@@ -147,14 +144,12 @@ class MessageBar extends Component {
     }
   }
 
-
   /*
   * Return true if the MessageBar is currently displayed, otherwise false
   */
   isMessageBarShown() {
     return this.alertShown;
   }
-
 
   /*
   * Hide the alert, typically used when user tap the alert
@@ -173,7 +168,6 @@ class MessageBar extends Component {
       duration: this.state.durationToHide
     }).start(this._hideMessageBarAlertComplete());
   }
-
 
   _hideMessageBarAlertComplete() {
     // The alert is not shown anymore
@@ -194,7 +188,6 @@ class MessageBar extends Component {
     }
   }
 
-
   /*
   * Callback executed when the user tap the alert
   */
@@ -210,7 +203,6 @@ class MessageBar extends Component {
     }
   }
 
-
   /*
   * Callback executed when alert is shown
   */
@@ -220,7 +212,6 @@ class MessageBar extends Component {
     }
   }
 
-
   /*
   * Callback executed when alert is hidden
   */
@@ -229,7 +220,6 @@ class MessageBar extends Component {
       this.state.onHide();
     }
   }
-
 
   /*
   * Change the background color and the line stroke color depending on the alertType
@@ -271,7 +261,6 @@ class MessageBar extends Component {
     });
   }
 
-
   /*
   * Change view<Position>Offset property depending on the state position
   */
@@ -294,7 +283,6 @@ class MessageBar extends Component {
         break;
     }
   }
-
 
   /*
   * Set the animation transformation depending on the chosen animationType, or depending on the state's position if animationType is not overridden
@@ -351,7 +339,6 @@ class MessageBar extends Component {
     }
   }
 
-
   /*
   * Alert Rendering Methods
   */
@@ -361,7 +348,7 @@ class MessageBar extends Component {
     this._apllyAnimationTypeTransformation();
 
     return (
-      <Animated.View style={{ transform: this.animationTypeTransform, backgroundColor: this.state.backgroundColor, borderColor: this.state.strokeColor, borderBottomWidth: 1, position: 'absolute', top: this.state.viewTopOffset, bottom: this.state.viewBottomOffset, left: this.state.viewLeftOffset, right: this.state.viewRightOffset, paddingTop: this.state.viewTopInset, paddingBottom: this.state.viewBottomInset, paddingLeft: this.state.viewLeftInset, paddingRight: this.state.viewRightInset }}>
+      <Animated.View style={{ transform: this.animationTypeTransform, backgroundColor: this.state.backgroundColor, borderColor: this.state.strokeColor, borderBottomWidth: 1, position: 'absolute', top: this.state.viewTopOffset, bottom: this.state.viewBottomOffset, left: this.state.viewLeftOffset, right: this.state.viewRightOffset, paddingTop: this.state.viewTopInset, paddingBottom: this.state.viewBottomInset, paddingLeft: this.state.viewLeftInset, paddingRight: this.state.viewRightInset, zIndex: 4000 }}>
         <TouchableOpacity onPress={()=>{this._alertTapped()}} style={{ flex: 1 }}>
           <View style={{ flex: 1, flexDirection: 'row', alignItems: 'flex-end', padding: 10 }} >
             { this.renderImage() }
@@ -414,6 +401,5 @@ class MessageBar extends Component {
   }
 
 }
-
 
 module.exports = MessageBar;
