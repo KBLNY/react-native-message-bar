@@ -230,7 +230,7 @@ messageNumberOfLines  | Number   | 2                    | Number of lines of the
 avatarStyle           | Style    | { height: 40, width: 40, borderRadius: 20, alignSelf: 'center' } | Style of the icon/avatar
 titleStyle            | Style    | { color: 'white', fontSize: 18, fontWeight: 'bold' } | Style of the title
 messageStyle          | Style    | { color: 'white', fontSize: 16 } | Style of the message
-position              | String   | top                  | Define the position of the alert, can be `top` or `right`
+position              | String   | top                  | Define the position of the alert, can be `top` or `bottom`
 animationType         | String   | SlideFromTop         | Define the way the alert is animated on the view, can be `SlideFromTop`, `SlideFromBottom`, `SlideFromLeft` or `SlideFromRight`. If no value is specified, the animation type is selected for you based on the `position`; `SlideFromTop` if `position` is equal to `top`, `SlideFromBottom` if `position` is equal to `bottom`. The alert will then be smoothly displayed
 
 
